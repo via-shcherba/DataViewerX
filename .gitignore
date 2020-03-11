@@ -7,5 +7,5 @@
 
 /.idea
 /IlluminatedCloud
-/*.vscode
+#/*.vscode
 /*.sfdx
