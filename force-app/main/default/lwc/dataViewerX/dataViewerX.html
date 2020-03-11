@@ -1,0 +1,25 @@
+<template>
+    <lightning-card title="DataX LWC Component"  icon-name="custom:custom14">
+        <p class="slds-p-horizontal_small">{labels.objectNameLbl}: {objectName}</p>
+        <br/>
+        <div class="slds-box slds-box_small">
+            <div class="table-wrapper" >
+                <template if:true={data}>
+                    <lightning-datatable
+                        key-field="id"
+                        data={data}
+                        columns={columns}
+                    >
+                    </lightning-datatable>
+                </template>
+                <template if:false={data}>
+                    {labels.notAvailableLbl}!
+                </template>
+            </div>
+        </div>       
+        <p slot="footer">
+            <span> {labels.pageNumberLbl}: {pageNumber} {labels.ofLbl} {numberPages}</span>
+            <c-pagination onselect={changePageSize} onnext={nextPage} onprevious={previousPage} onfirst={firstPage} onlast={lastPage}></c-pagination> 
+        </p>
+    </lightning-card>
+</template>
